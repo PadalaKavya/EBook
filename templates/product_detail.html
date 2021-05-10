@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EBOOK | The shelves are all booked up!</title>
+<link rel='stylesheet' href='../static/css/woocommerce-layout.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='../static/css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)'/>
+<link rel='stylesheet' href='../static/css/woocommerce.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='../static/css/font-awesome.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='../static/css/Home.css' type='text/css' media='all'/>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Oswald:400,500,700%7CRoboto:400,500,700%7CHerr+Von+Muellerhoff:400,500,700%7CQuattrocento+Sans:400,500,700' type='text/css' media='all'/>
+<link rel='stylesheet' href='../static/css/easy-responsive-shortcodes.css' type='text/css' media='all'/>
+</head>
+<body class="single single-product woocommerce woocommerce-page">
+<div id="page">
+	<div class="container">
+		<header id="masthead" class="site-header">
+		<div class="site-branding">
+			<h1 class="site-title"><a href="index.html" rel="home">EBOOK</a></h1>
+			<h2 class="site-description">The shelves are all booked up!</h2>
+		</div>
+		<nav id="site-navigation" class="main-navigation">
+		<button class="menu-toggle">Menu</button>
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+		<div class="menu-menu-1-container">
+			<ul id="menu-menu-1" class="menu">
+				<li><a href="/">Home</a></li>
+				<li><a href="/allproducts">All products</a></li>
+				<li><a href="/cart">Cart</a></li>
+				{% if not loggedin %}
+		        <li><a href="/register">Register</a></li>
+		        <li><a href="/login">Login</a></li>
+	      {% else %}
+            <li><a href="/logout">Sign Out</a></li>
+				{% endif %}
+        <li><a href="/history">Purchase History</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+		</div>
+		</nav>
+		</header>
+		<!-- #masthead -->
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area column full">
+				<main id="main" class="site-main" role="main">
+				<div id="container">
+					<div id="content" role="main">
+						<div itemscope itemtype="http://schema.org/Product" class="product">
+							<div class="images">
+								<a href="" itemprop="image" class="woocommerce-main-image zoom" title="" data-rel="prettyPhoto">
+								<img src={{url_for('static', filename='images/'+data[5])}} id="image"></img></a>
+							</div>
+							<div class="summary entry-summary">
+								<h1 itemprop="name" class="product_title entry-title">{{data[2]}}</h1>
+								<div class="woocommerce-product-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+								</div>
+
+								<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+									<p class="price">
+										<span class="amount">Rs{{data[3]}}</span>
+									</p>
+									<meta itemprop="price" content="35"/>
+									<meta itemprop="priceCurrency" content="USD"/>
+									<link itemprop="availability" href="http://schema.org/InStock"/>
+								</div>
+								<div itemprop="description">
+									<p>
+										{{data[4]}}
+									</p>
+								</div>
+								<form action="/AddCart" class="cart" method="post" enctype='multipart/form-data'>
+									{{msg}}
+									<input type="hidden" name="ProductId" value="{{data[0]}}"/>
+									<button type="submit" class="single_add_to_cart_button button alt">Add to cart</button>
+								</form>
+
+							</div>
+							<!-- .summary -->
+							<div class="woocommerce-tabs wc-tabs-wrapper">
+									<div class="panel entry-content wc-tab" id="tab-description">
+								</div>
+							</div>
+
+				</div>
+				</main>
+				<!-- #main -->
+			</div>
+			<!-- #primary -->
+		</div>
+		<!-- #content -->
+	</div>
+	<!-- .container -->
+	<footer id="colophon" class="site-footer">
+	<div class="container">
+		<div class="site-info">
+			<h1 style="font-family: 'Herr Von Muellerhoff';color: #ccc;font-weight:300;text-align: center;margin-bottom:0;margin-top:0;line-height:1.4;font-size: 46px;">EBook</h1>
+			<a target="blank" href="https://www.wowthemes.net/">&copy; EBOOK - The shelves are all booked up!</a>
+		</div>
+	</div>
+	</footer>
+	<a href="#top" class="smoothup" title="Back to top"><span class="genericon genericon-collapse"></span></a>
+</div>
+<!-- #page -->
+<script src='js/jquery.js'></script>
+<script src='js/plugins.js'></script>
+<script src='js/scripts.js'></script>
+<script src='js/masonry.pkgd.min.js'></script>
+</body>
+</html>

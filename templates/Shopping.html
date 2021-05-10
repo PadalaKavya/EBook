@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Admin</title>
+  </head>
+  <body>
+      <form action="/AddProduct" method="POST" enctype="multipart/form-data" class="register-form" id="register-form">
+        <input type="text" name="name" id="name" placeholder="Product Name"/>
+        <input type="" name="price" id="price" placeholder="price"/>
+        <input type="text" name="description" id="description" placeholder="description"/>
+         <input type="file" name="image"><br>
+         <label for="category">ADD catogory</label>
+         <select name="category" id="category" class="form-control" required>
+           <option value="">Select a category</option>
+           <option value="1">Fantasy</option>
+           <option value="2">Dsytopian</option>
+           <option value="3">Science Fiction</option>
+           <option value="4">Women's Fiction</option>
+           <option value="5">Autobiography</option>
+           <option value="6">Biography</option>
+
+         <input type="submit">
+      </form>
+      <!--<table>
+        <tr>
+           <th>CategoryId</th>
+           <th>CategoryName</th>
+        </tr>
+        {%for category in account %}
+        <tr>
+           <td>{{category[1]}}</td>
+          <td>{{category[2]}}</td>
+        </tr>
+         {% endfor %}
+      </table>-->
+  </body>
+</html>
