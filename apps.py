@@ -13,9 +13,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.secret_key = 'a'
 app.config['MYSQL_HOST'] = 'remotemysql.com'
-app.config['MYSQL_USER'] = 'fLNqhkfPr1'
-app.config['MYSQL_PASSWORD'] = 'WskA0jqs7w'
-app.config['MYSQL_DB'] = 'fLNqhkfPr1'
+app.config['MYSQL_USER'] = '...'
+app.config['MYSQL_PASSWORD'] = '...'
+app.config['MYSQL_DB'] = '...'
 mysql = MySQL(app)
 UPLOAD_FOLDER = 'static/images'
 ALLOWED_EXTENSIONS = set(['jpeg', 'jpg', 'png', 'gif'])
